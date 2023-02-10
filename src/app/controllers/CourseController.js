@@ -28,16 +28,6 @@ class CourseController {
       .catch((error) => {})
   }
 
-  store1(res, req) {
-    req.body.image = `http`
-    const course = new Course(req.body)
-    course
-      .save()
-      .then(() => {
-        res.redirect('/me')
-      })
-      .catch((error) => {})
-  }
   // [GET] /courses/:id/edit
   edit(req, res, next) {
     Course.findById(req.params.id)
