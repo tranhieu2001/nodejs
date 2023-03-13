@@ -33,9 +33,6 @@ app.engine(
   'hbs',
   handlebars({
     extname: '.hbs',
-    helpers: {
-      sum: (a, b) => a + b,
-    },
   })
 )
 app.set('view engine', 'hbs')
