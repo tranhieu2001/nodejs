@@ -11,7 +11,7 @@ const db = require('./config/db')
 db.connect()
 
 const app = express()
-const port = 3000
+const port = 3050
 
 // Use static folder
 app.use(express.static(path.join(__dirname, 'public')))
@@ -33,6 +33,9 @@ app.engine(
   'hbs',
   handlebars({
     extname: '.hbs',
+    helpers: {
+      sum: (a, b) => a + b,
+    },
   })
 )
 app.set('view engine', 'hbs')
